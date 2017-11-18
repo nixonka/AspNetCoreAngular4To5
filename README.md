@@ -71,6 +71,32 @@ package.json
 webpac.config.js
 webpack.config.vendor.js 
 ```javascript
-    //add this line to plugins array
-    new webpack.ContextReplacementPlugin(/@angular(\\|\/)core(\|\/)esm5/, path.join(__dirname, './ClientApp')),
+//add this line to plugins array
+new webpack.ContextReplacementPlugin(/@angular(\\|\/)core(\|\/)esm5/, path.join(__dirname, './ClientApp')),
+```
+
+Update dependecies to latest version: 
+```
+npm install @angular/common@latest @angular/compiler@latest @angular/compiler-cli@latest @angular/core@latest @angular/forms@latest @angular/http@latest @angular/platform-browser@latest @angular/platform-browser-dynamic@latest @angular/platform-server@latest @angular/router@latest @angular/animations@latest typescript@latest 
+```
+```
+npm install --save-dev @ngtools/webpack@latest
+```
+Recompile 
+```
+webpack --config webpack.config.vendor.js 
+```
+(must have webpack installed globally: npm install -g webpack@latest)
+
+Replaced files manully in app.module:
+```
+import { HttpModule } from '@angular/http';
+```
+to 
+```
+import { HttpClientModule } from '@angular/common/http';
+```
+in services files instead of Http I've used HttpClient:
+```
+import { HttpClient } from '@angular/common/http'; 
 ```
