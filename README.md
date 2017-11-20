@@ -1,4 +1,4 @@
-# AspNetCoreAngular4To5
+# Asp Net Core Angular Spa Template updated to Angular 5 components
 Asp Net Core Angular 4 template updated to Angular 5
 
 package.json
